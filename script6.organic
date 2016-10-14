@@ -1,0 +1,11 @@
+source $counter1 counter 5;
+source $c_array array $counter1->to_array();
+
+applychild $c_array ($$+1);
+applychild $c_array ($$.'');
+
+source $numtext text "The Numbers: %nn%<br>";
+
+multiplexer $mul1 $numtext $c_array->make_array_inj("nn");
+
+echo $mul1->exec()->combine();

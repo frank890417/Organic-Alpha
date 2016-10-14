@@ -1,0 +1,11 @@
+<div class='block subblock' style="margin-left: 40px;padding-left: 40px;" id = block[%id%] >
+	<h3 class=title style='font-size: 25px;'>審核貼文-編號 [%id%](認可:[%confirm%]/3)</h3>
+	<h4 class=time>時間: [%time%]</h4>
+	<p class=innercontent>[%msg%]</p>
+	<form method='post'> 
+		<input name=acceptid value=[%id%]  style='display:none;'/>
+		<input name=yesbtn id=yesbtn[%id%]  class='postbtn yesbtn' type='submit'  value='推'/>
+		<input name=nobtn id=nobtn[%id%]  class='postbtn nobtn' type='submit' value='踩'/>
+		<p style='padding: 5px;color:#888;font-size: 10px;'>ip: [%ip%]</p>
+	</form>
+</div>

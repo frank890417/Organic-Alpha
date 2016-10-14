@@ -1,0 +1,41 @@
+<html>
+<style> .numbox{
+width: 30px;
+height:30px;
+border-style:solid;
+border-width:1px;
+border-color:#ccc;
+background-color:#eee;
+
+display:inline-block;
+transition-duration:0.5s;
+text-align:center;
+padding-top:5px;
+cursor: pointer;
+border-radius: 5px;
+}
+.numbox:hover{
+background-color:#333;
+color:#fff;
+}
+.extra{
+display:none;
+}
+
+</style>
+	<head>
+				<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+		<!-- Latest compiled and minified JavaScript -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<meta charset="utf-8"> 
+	</head>
+
+	<body>
+                 <h1>Counter 測試</h1>
+                 <p>這個範例是示範如何將source-counter類別轉換成array之後<br>使用applychild對每個元素進行操作<br>再將結果使用make_array_inj添增標籤後插入到製作好的numberboxhtml裡面<br><br>
+
+              [%content%]
+       </body>
+</html>

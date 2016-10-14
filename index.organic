@@ -1,0 +1,19 @@
+source $indexframe file "indexframe.html";
+source $arr array (scandir('./'));
+organic "http://www.monoame.com/organic_alpha/filelist.organic";
+
+source $weblist sql "select id,text,link,DATE_FORMAT(time,'%Y-%m-%d') as time from indexsourcelist";
+
+source $injtext text "  <div class=files>  檔案: <a target='_blank' href='[%name%]'>[%name%]</a><br></div>";
+multiplexer $result $injtext $arr->make_array_inj("name");
+
+source $injtext2 text " <div class=files><a class='mainlink' target='_blank' href='[%link%]'>[%text%]</a><p class='time'>[%time%]</p><br></div>";
+multiplexer $result2 $injtext2 $weblist;
+
+source $cdns cdn "jquery";
+
+injector $indexstage1 $indexframe $result->exec()->combine()->make_inj("filelist");
+injector $indexstage2 $indexstage1->exec() $cdns->to_text()->make_inj("cdn");
+injector $indexstage3 $indexstage2->exec() $result2->exec()->combine()->make_inj("resource");
+
+source $page output $indexstage3->exec();

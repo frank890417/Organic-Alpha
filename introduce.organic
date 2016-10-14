@@ -1,0 +1,6 @@
+source $uselist sql "select * from indexsourcelist";
+source $injecttext text "項目: [%text%]<br>";
+
+multiplexer $mux1 $injecttext $uselist;
+
+source $out1 output $mux1->exec()->combine();

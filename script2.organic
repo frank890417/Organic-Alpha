@@ -1,0 +1,17 @@
+//取得網頁注入大框架;
+source $s_frame file "frame.html";
+ 
+//設定資料源sql取得cbnctu裡的前五筆貼文;
+source $s_sql sql ("SELECT * FROM cbnctu order by id desc limit 5");
+
+//設定資料源為檔案 textinject.html;
+source $s_inj1text file "testinject.html";
+
+//建立多工器設定資料源與注入資料為sql結果;
+multiplexer $mux1 $s_inj1text $s_sql;
+
+//建立注入器設定資料源為網頁大框架，注入資料為多工器結果(->exec())結合之後的文字源作成新的注射資料標籤為content;
+injector $inj2 $s_frame $mux1->exec()->combine()->make_inj("content");
+
+//顯示注入器的執行結果(exec());
+echo $inj2->exec();

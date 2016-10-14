@@ -1,0 +1,7 @@
+source $sframe file "frame.html";
+source $ssql sql "SELECT * FROM cbnctu order by id desc limit 5";
+source $sinj1text file "testinject.html";
+multiplexer $mux1 $sinj1text $ssql;
+injector $inj2 $sframe $mux1->exec()->combine()->make_inj("content");
+
+source $soutput output $inj2->exec();

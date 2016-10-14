@@ -1,0 +1,78 @@
+<html>
+
+	<style>
+
+		body{
+			background-color: #222;
+			font-family: 微軟正黑體;
+			color:#bbb;
+		}
+
+		
+		a,h3{
+			color:white;
+			text-decoration: none;
+			transition-duration:0.3s;
+			transform: rotateX(0deg);
+		}
+		a:hover{
+			color:#fc5;
+			transform: rotateX(10deg);
+		}
+		h3{
+			font-size: 25px;
+			letter-spacing: 3px;
+			color: #ccc;
+		}
+		.time{
+			display: inline;
+			color: #999;
+			font-size: 14px;
+			padding-left: 12px;
+		}
+
+		.mainlink{
+			padding-left: 10px;
+			line-height: 20px;
+
+		}
+		
+		.files{
+			height: 20px;
+			padding-left: 30px;
+		}
+
+	</style>
+	<head>
+			
+		<title> Organic Alpha v0.55</title>
+	    <meta charset="utf-8"> 
+		<link rel="shortcut icon" href="http://www.monoame.com/organic_alpha/organic.ico">
+
+		[%cdn%]
+
+	
+	</head>
+	<body>
+	<h2 style="color: white;margin-top: 20px;"> <a href='index.php'><img src="logouse-02.png" height="60px" /></a> Organic Alpha專案</h2>
+		
+		<div style="padding-left: 40px;">
+		<h3>資源列表</h3>
+
+			[%resource%]
+
+		<br><br>
+
+		<h3>目錄檔案列表:</h3>
+
+			[%filelist%]
+
+		</div>
+
+
+
+		
+	
+
+	</body>
+</html>

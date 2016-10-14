@@ -1,0 +1,5 @@
+source $dir input "./";
+source $arr array (scandir($dir->exec()));
+source $injtext text "  <div class=files>  檔案: <a target='_blank' href='[%name%]'>[%name%]</a><br></div>";
+multiplexer $result $injtext $arr->make_array_inj("name");
+source $filelist output $result->exec()->combine();
